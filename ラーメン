@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramen Ten — Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=DM+Sans:wght@300;400;500&family=Noto+Sans+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:    #0e0c0a;
+    --bg3:   #1e1a16;
+    --gold:  #c9a96e;
+    --glt:   #e8c98a;
+    --red:   #c0392b;
+    --cream: #f2ead8;
+    --muted: #7a7060;
+    --bdr:   rgba(201,169,110,0.18);
+    --bdr2:  rgba(201,169,110,0.07);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--bg); color:var(--cream);
+    font-family:'DM Sans','Noto Sans Armenian',sans-serif;
+    min-height:100vh; overflow-x:hidden;
+  }
+
+/* HERO */
+.hero {
+background:linear-gradient(160deg,#1c1710 0%,#0e0c0a 100%);
+border-bottom:1px solid var(–bdr);
+padding:40px 24px 28px; text-align:center;
+position:relative; overflow:hidden;
+}
+.hero::before {
+content:‘拉麺天’;
+position:absolute; font-family:‘Shippori Mincho’,serif;
+font-size:7rem; color:rgba(201,169,110,0.04);
+top:50%; left:50%; transform:translate(-50%,-50%);
+pointer-events:none; white-space:nowrap;
+}
+.hero-title { font-family:‘Shippori Mincho’,serif; font-size:1.9rem; font-weight:600; color:var(–gold); letter-spacing:.14em; }
+.hero-line  { width:36px; height:1px; background:var(–gold); margin:10px auto; opacity:.4; }
+.hero-sub   { font-size:.72rem; color:var(–muted); letter-spacing:.24em; text-transform:uppercase; }
+
+/* HEADER */
+header {
+position:sticky; top:0; z-index:100;
+background:rgba(14,12,10,.97); backdrop-filter:blur(14px);
+border-bottom:1px solid var(–bdr);
+padding:0 20px; display:flex; align-items:center; justify-content:space-between; height:56px;
+}
+.logo { font-family:‘Shippori Mincho’,serif; font-size:1.05rem; letter-spacing:.15em; color:var(–gold); }
+
+/* LANG */
+.lang-sw { display:flex; gap:2px; background:var(–bg3); border-radius:20px; padding:3px; border:1px solid var(–bdr); }
+.lang-btn {
+background:none; border:none; color:var(–muted);
+font-family:‘DM Sans’,sans-serif; font-size:.72rem; font-weight:500;
+padding:4px 10px; border-radius:16px; cursor:pointer; transition:all .2s;
+}
+.lang-btn.active { background:var(–gold); color:var(–bg); }
+.lang-btn:hover:not(.active) { color:var(–cream); }
+
+/* TABS */
+.tab-bar {
+display:flex; overflow-x:auto; scrollbar-width:none;
+border-bottom:1px solid var(–bdr2); background:var(–bg);
+position:sticky; top:56px; z-index:90; padding:0 16px;
+}
+.tab-bar::-webkit-scrollbar { display:none; }
+.tab-btn {
+flex-shrink:0; background:none; border:none; color:var(–muted);
+font-family:‘DM Sans’,sans-serif; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
+padding:13px 16px 11px; cursor:pointer; border-bottom:2px solid transparent;
+transition:color .2s,border-color .2s; white-space:nowrap;
+}
+.tab-btn:hover { color:var(–cream); }
+.tab-btn.active { color:var(–gold); border-bottom-color:var(–gold); }
+
+/* CONTAINER */
+.container { max-width:680px; margin:0 auto; padding:0 16px 80px; }
+
+/* SECTION TITLE */
+.sec-title {
+font-family:‘Shippori Mincho’,serif; font-size:.62rem;
+letter-spacing:.32em; text-transform:uppercase; color:var(–gold);
+padding:28px 0 14px; display:flex; align-items:center; gap:14px;
+}
+.sec-title::after { content:’’; flex:1; height:1px; background:var(–bdr); }
+
+/* ITEM */
+.item {
+display:flex; align-items:flex-start; gap:14px;
+padding:18px 10px 18px 0; border-bottom:1px solid var(–bdr2);
+border-radius:6px; transition:background .15s,padding .15s;
+animation:fadeUp .35s ease both;
+}
+.item:hover { background:rgba(201,169,110,.05); padding:18px 10px; }
+.item:last-child { border-bottom:none; }
+
+.plate img {
+width:100%; height:100%; object-fit:cover; border-radius:7px; cursor:pointer;
+}
+.modal-overlay {
+display:none; position:fixed; inset:0; z-index:999;
+background:rgba(0,0,0,0.88); align-items:center; justify-content:center;
+}
+.modal-overlay.open { display:flex; }
+.modal-overlay img {
+max-width:94vw; max-height:82vh; border-radius:14px;
+object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.6);
+}
+.modal-close {
+position:absolute; top:20px; right:20px;
+background:rgba(255,255,255,0.15); border:none; color:#fff;
+font-size:1.4rem; width:40px; height:40px; border-radius:50%;
+cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+.plate {
+width:76px; height:76px; border-radius:8px;
+background:var(–bg3); border:1px solid var(–bdr2);
+display:flex; align-items:center; justify-content:center;
+font-size:2rem; flex-shrink:0;
+}
+
+.body { flex:1; min-width:0; }
+.name { font-family:‘Shippori Mincho’,serif; font-size:1rem; font-weight:600; color:var(–cream); line-height:1.3; margin-bottom:3px; }
+.jp   { font-size:.68rem; color:var(–muted); letter-spacing:.1em; margin-bottom:6px; }
+.desc { font-size:.78rem; color:var(–muted); line-height:1.55; }
+.tags { display:flex; gap:6px; margin-top:8px; flex-wrap:wrap; }
+.tag  { font-size:.6rem; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:20px; border:1px solid; }
+.tag-spicy { color:var(–red);   border-color:var(–red); }
+.tag-veg   { color:#7ab87a;      border-color:#7ab87a; }
+.tag-vegan { color:#4caf50;      border-color:#4caf50; }
+.tag-halal { color:#b8a07a;      border-color:#b8a07a; }
+.tag-rich  { color:var(–glt);   border-color:var(–glt); }
+
+.right { display:flex; flex-direction:column; align-items:flex-end; gap:5px; flex-shrink:0; padding-top:2px; }
+.price { font-size:.95rem; font-weight:500; color:var(–gold); white-space:nowrap; }
+.price-mega { font-size:.7rem; color:var(–muted); white-space:nowrap; }
+
+/* CARD (dessert/drink) */
+.card-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px; }
+.card {
+background:var(–bg3); border:1px solid var(–bdr2);
+border-radius:10px; padding:14px;
+animation:fadeUp .35s ease both;
+}
+.card-title { font-family:‘Shippori Mincho’,serif; font-size:.88rem; font-weight:600; color:var(–cream); margin-bottom:4px; }
+.card-price { font-size:.8rem; color:var(–gold); margin-bottom:6px; }
+.card-desc  { font-size:.73rem; color:var(–muted); line-height:1.5; }
+
+/* TOPPING LIST */
+.topping-row {
+display:flex; justify-content:space-between; align-items:baseline;
+padding:10px 0; border-bottom:1px solid var(–bdr2); font-size:.83rem;
+animation:fadeUp .35s ease both;
+}
+.topping-row:last-child { border-bottom:none; }
+.topping-name { color:var(–cream); }
+.topping-price { color:var(–gold); white-space:nowrap; margin-left:12px; }
+
+/* POLICY */
+.policy {
+margin-top:24px; padding:16px; border:1px solid var(–bdr);
+border-radius:10px; background:var(–bg3);
+font-size:.76rem; color:var(–muted); line-height:1.7;
+}
+.policy p + p { margin-top:6px; }
+
+/* NOTE */
+.note {
+margin-top:28px; padding:13px 16px;
+border:1px solid var(–bdr); border-radius:8px;
+background:var(–bg3); font-size:.74rem; color:var(–muted); line-height:1.6; text-align:center;
+}
+
+/* SCROLL TOP */
+#scrollTop {
+position:fixed; bottom:24px; right:20px;
+width:40px; height:40px; background:var(–gold); color:var(–bg);
+border:none; border-radius:50%; font-size:1.1rem; cursor:pointer;
+display:none; align-items:center; justify-content:center;
+box-shadow:0 4px 18px rgba(0,0,0,.45); z-index:200;
+}
+#scrollTop.on { display:flex; }
+
+@media(max-width:420px){
+.card-grid { grid-template-columns:1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-title">拉麺天</div>
+  <div class="hero-line"></div>
+  <div class="hero-sub">Ramen Ten — Yerevan</div>
+</div>
+
+<header>
+  <div class="logo">RAMEN TEN</div>
+  <div class="lang-sw">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn"        data-lang="ru">RU</button>
+    <button class="lang-btn"        data-lang="am">ՀԱՅ</button>
+  </div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="ramen">Ramen</button>
+  <button class="tab-btn"        data-tab="toppings">Toppings</button>
+  <button class="tab-btn"        data-tab="dessert">Desserts</button>
+  <button class="tab-btn"        data-tab="drinks">Drinks</button>
+</div>
+
+<div class="container" id="container"></div>
+<button id="scrollTop">↑</button>
+
+<script>
+// ══════════════════════════════════════════
+//  DATA  (from slide content)
+// ══════════════════════════════════════════
+
+const RAMEN = [
+  {
+    emoji:"🍜", jp:"醤油ラーメン / 清湯", tags:["halal"],
+    std:"4,500 AMD", mega:"Mega: 8,500 AMD",
+    en:{
+      name:"Shoyu Ramen",
+      desc:"Tokyo-style clear soy sauce broth, cooked for 1 day. Chicken base with kombu, apple, onion, garlic, soy sauce, tuna flakes, seashell & apple vinegar. Served with marinated pork (or chicken) slices, medium-cooked egg, green onion, red onion & roasted sesame."
+    },
+    ru:{
+      name:"Сёю Рамен",
+      desc:"Прозрачный бульон на соевом соусе в токийском стиле, варится 1 день. Куриная основа с комбу, яблоком, луком, чесноком, соевым соусом, хлопьями тунца, ракушкой и яблочным уксусом. Подаётся с маринованной свининой (или курицей), яйцом, зелёным и красным луком, кунжутом."
+    },
+    am:{
+      name:"Շոյու Ռամեն",
+      desc:"Տոկիոյի ոճի թափանցիկ սոյայի ապուր, եփվում է 1 օր։ Հավի հիմք՝ կոմբու, խնձոր, սոխ, սխտոր, սոյայի սոուս, թյունոսի փաթիլներ, խեցի, խնձորի քացախ։ Մատուցվում է մարինացված խոզի (կամ հավի) կտորներով, ձվով, կանաչ ու կարմիր սոխով, քնջութով։"
+    }
+  },
+  {
+    emoji:"🌶️", jp:"スパイシー醤油ラーメン / 辛いたれ", tags:["spicy","halal"],
+    std:"4,500 AMD", mega:"Mega: 8,500 AMD",
+    en:{
+      name:"Spicy Shoyu Ramen",
+      desc:"Same clear chicken-soy broth as Shoyu, elevated with spicy tare. Served with spicy ground pork (or spicy soy meat), medium-cooked egg, green onion, red onion & roasted sesame."
+    },
+    ru:{
+      name:"Острый Сёю Рамен",
+      desc:"Тот же прозрачный куриный бульон на соевом соусе, с добавлением острого тарэ. Подаётся с острым свиным фаршем (или острым соевым мясом), яйцом, зелёным и красным луком, кунжутом."
+    },
+    am:{
+      name:"Կծու Շոյու Ռամեն",
+      desc:"Նույն թափանցիկ հավ-սոյա ապուրը կծու տարե-ով։ Մատուցվում է կծու կոտրած խոզի մսով (կամ կծու սոյայի մսով), ձվով, կանաչ ու կարմիր սոխով, քնջութով։"
+    }
+  },
+  {
+    emoji:"🍜", jp:"味噌ラーメン / 白湯", tags:["halal"],
+    std:"4,500 AMD", mega:"Mega: 8,500 AMD",
+    en:{
+      name:"Miso Ramen",
+      desc:"Rich creamy chicken paitan broth cooked for 2 days. Chicken base with kombu, apple, onion, ginger, garlic, miso, soy sauce & sesame oil. Served with marinated pork (or chicken) slices, medium-cooked egg, green onion, red onion & roasted sesame."
+    },
+    ru:{
+      name:"Мисо Рамен",
+      desc:"Насыщенный кремовый куриный бульон пайтан, варится 2 дня. Основа: курица, комбу, яблоко, лук, имбирь, чеснок, мисо, соевый соус, кунжутное масло. С маринованной свининой (или курицей), яйцом, зелёным и красным луком, кунжутом."
+    },
+    am:{
+      name:"Միսո Ռամեն",
+      desc:"Հարուստ կաթնագույն հավի փայտան ապուր, եփվում է 2 օր։ Հավ, կոմbու, խնձոր, սոխ, կոճապղpեղ, սխтор, miso, սоyайи соус, кuнжutо yуğ։ Мaтуцвum э мaринaцвaц хoзи (кam havi) кторнeров, дзвov, сoхerov, кunжутov։"
+    }
+  },
+  {
+    emoji:"🌶️", jp:"スパイシー味噌ラーメン / 坦々麺", tags:["spicy","halal"],
+    std:"4,500 AMD", mega:"Mega: 8,500 AMD",
+    en:{
+      name:"Spicy Miso Ramen",
+      desc:"Creamy chicken miso broth cooked for 2 days with bold spicy tare (Tantan-men style). Served with spicy ground pork (or spicy soy meat), medium-cooked egg, green onion, red onion & roasted sesame."
+    },
+    ru:{
+      name:"Острый Мисо Рамен",
+      desc:"Кремовый куриный бульон мисо, варится 2 дня, с насыщенным острым тарэ (стиль Тантан-мен). С острым свиным фаршем (или соевым мясом), яйцом, зелёным и красным луком, кунжутом."
+    },
+    am:{
+      name:"Կծու Միсо Ռամен",
+      desc:"Кaтнaгуйн hави мисо апур 2 ор еpvaц, кcу тaрe-ov (Тaнтaн-мен)։ Кцу хoзи мcов (кam сoyaйи мcov), дзвov, кaнaч у кармир сохов, кuнжутov։"
+    }
+  },
+  {
+    emoji:"🍖", jp:"豚骨ラーメン / 三日間スープ", tags:["rich"],
+    std:"4,500 AMD", mega:"Mega: 8,500 AMD",
+    en:{
+      name:"Tonkotsu Ramen",
+      desc:"Hakata-style rich creamy pork bone broth — cooked for 3 days! Collagen-rich, great for skin. Pork bone & kombu base, served with marinated pork slices, medium-cooked egg, green onion, red onion & roasted sesame."
+    },
+    ru:{
+      name:"Тонкоцу Рамен",
+      desc:"Кремовый бульон из свиных костей в стиле Хаката — варится 3 дня! Богат коллагеном. Основа: свиные кости и комбу. Подаётся с маринованной свининой, яйцом, зелёным и красным луком, кунжутом."
+    },
+    am:{
+      name:"Տոնկոcу Ռامеն",
+      desc:"Haкaтaйи oճi kрeмaйин хозоскри апур — еpvum е 3 ор! Колагeнoв hаруст, лав мaшkoу hamар։ Хоzoскор у кombu, мaтуцвum е мaринaцвaц хoзov, дзвov, сoхerov, кunжутov։"
+    }
+  },
+  {
+    emoji:"🥦", jp:"ベジタリアン担々麺 / 野菜", tags:["veg","spicy","halal"],
+    std:"4,500 AMD", mega:"Mega: 8,500 AMD",
+    en:{
+      name:"Veggie Tantan Men",
+      desc:"100% plant-based sesame-soy milk broth with miso. Spicy soy meat & egg topping. Ingredients: soy meat, soy milk, miso, garlic, ginger, soy sauce, Japanese sweet sake, red chili pepper, white sesame paste, green & red onion. A little spicy — ask us to adjust!"
+    },
+    ru:{
+      name:"Вегги Тантан Мен",
+      desc:"100% растительный бульон из кунжута и соевого молока с мисо. Острое соевое мясо и яйцо. Состав: соевое мясо, соевое молоко, мисо, чеснок, имбирь, соевый соус, японское сладкое саке, красный перец чили, паста из белого кунжута, зелёный и красный лук. Немного острый — спросите нас!"
+    },
+    am:{
+      name:"Veggi Tantan Men",
+      desc:"100% բusakan кunжут-сoya кaтi апур мисoyоv։ Кcу сoyaйи мис у дзу։ Бaघадруtyunner: сoya мис, сoya кaт, мисо, схтор, имбир, сoya сoус, чaках сaке, кarm. чили, сп. кunжутi мaцук, сох։ Mи кcу — хaрцрeк мeз!"
+    }
+  },
+  {
+    emoji:"🌱", jp:"ビーガン担々麺 / 野菜", tags:["vegan","spicy","halal"],
+    std:"4,500 AMD", mega:"Mega: 8,500 AMD",
+    en:{
+      name:"Vegan Tantan Men",
+      desc:"Fully vegan. Same sesame-soy milk miso broth with spicy soy meat only (no egg). Ingredients: soy meat, soy milk, miso, garlic, ginger, soy sauce, Japanese sweet sake, red chili pepper, white sesame paste, green & red onion. A little spicy — ask us to adjust!"
+    },
+    ru:{
+      name:"Веган Тантан Мен",
+      desc:"Полностью веганский. Тот же кунжутно-соевый бульон с мисо, только с острым соевым мясом (без яйца). Состав: соевое мясо, соевое молоко, мисо, чеснок, имбирь, соевый соус, японское сладкое саке, красный перец чили, паста из белого кунжута, зелёный и красный лук."
+    },
+    am:{
+      name:"Vegan Tantan Men",
+      desc:"Амбoвьин веган։ Нуйн сoya-кunжут апур мисoyоv, мiaйн кцу сoya мисов (aranч дзвi)։ Нуйн бaघадруtюnнeр, бaйц кцу сoya мис мiaйн։"
+    }
+  }
+];
+
+const TOPPINGS = {
+  en:[
+    { name:"Spicy sauce",             price:"500 AMD" },
+    { name:"Extra half egg",          price:"500 AMD" },
+    { name:"Extra chashu (marinated pork or chicken slice +100%)", price:"1,500 AMD" },
+    { name:"Nori (dry seaweed)",       price:"500 AMD" },
+    { name:"Aedama (fresh noodles with seasonings)", price:"2,000 AMD" }
+  ],
+  ru:[
+    { name:"Острый соус",             price:"500 AMD" },
+    { name:"Дополнительное полу-яйцо", price:"500 AMD" },
+    { name:"Дополнительный чашу (маринованная свинина или курица +100%)", price:"1,500 AMD" },
+    { name:"Нори (сушёные водоросли)", price:"500 AMD" },
+    { name:"Аэдама (свежая лапша с приправами)", price:"2,000 AMD" }
+  ],
+  am:[
+    { name:"Кцу сoус",                price:"500 AMD" },
+    { name:"Лрaцуцич кeс дзу",        price:"500 AMD" },
+    { name:"Лрaцуцич чaшу (мaринaцвaц хози или hави кторнeр +100%)", price:"1,500 AMD" },
+    { name:"Нори (чор ջримуռ)",       price:"500 AMD" },
+    { name:"Аeдaмa (тaзa лапшa приправаeрoв hет)", price:"2,000 AMD" }
+  ]
+};
+
+const DESSERTS = {
+  en:[
+    { emoji:"🍵", title:"Matcha Ice Cream",  price:"2,000 AMD", desc:"House-made, served fresh." },
+    { emoji:"❓", title:"Weekly Dessert",     price:"1,500 AMD", desc:"Changes weekly — ask your server for today's special." }
+  ],
+  ru:[
+    { emoji:"🍵", title:"Мороженое Матча",   price:"2,000 AMD", desc:"Домашнего приготовления." },
+    { emoji:"❓", title:"Еженедельный десерт", price:"1,500 AMD", desc:"Меняется каждую неделю — спросите официанта." }
+  ],
+  am:[
+    { emoji:"🍵", title:"Матча Пaймaзaк",    price:"2,000 AMD", desc:"Тнaйин пaтрaстuм." },
+    { emoji:"❓", title:"Шабатвaйин Avetar",  price:"1,500 AMD", desc:"Aмен шabаt фохvum е — hарцрeк спасaвoрин." }
+  ]
+};
+
+const DRINKS = {
+  en:[
+    { emoji:"🍵", title:"Sencha Tea Pot",     price:"1,600 AMD", desc:"Japanese green tea." },
+    { emoji:"🍵", title:"Jasmine Oolong Tea Pot", price:"1,600 AMD", desc:"Fragrant oolong blend." },
+    { emoji:"🍊", title:"Fruit Juice",         price:"700 AMD",   desc:"Apple or Orange." },
+    { emoji:"💧", title:"Water",               price:"500 AMD",   desc:"" },
+    { emoji:"🍺", title:"Beer — Asahi / Dargett", price:"1,600 AMD", desc:"Japanese Asahi or local Dargett." },
+    { emoji:"🍶", title:"Sake — Dassai 獺祭 (20 ml)", price:"1,300 AMD", desc:"Premium Japanese sake." },
+    { emoji:"🍶", title:"Sake — Dassai 獺祭 (40 ml)", price:"2,500 AMD", desc:"Premium Japanese sake." },
+    { emoji:"🍶", title:"Sake — Dassai 獺祭 (200 ml bottle)", price:"10,000 AMD", desc:"Premium Japanese sake." }
+  ],
+  ru:[
+    { emoji:"🍵", title:"Чайник Сенча",       price:"1,600 AMD", desc:"Японский зелёный чай." },
+    { emoji:"🍵", title:"Чайник Жасминовый улун", price:"1,600 AMD", desc:"Ароматная смесь улуна." },
+    { emoji:"🍊", title:"Фруктовый сок",       price:"700 AMD",   desc:"Яблочный или апельсиновый." },
+    { emoji:"💧", title:"Вода",                price:"500 AMD",   desc:"" },
+    { emoji:"🍺", title:"Пиво — Asahi / Dargett", price:"1,600 AMD", desc:"Японский Asahi или местный Dargett." },
+    { emoji:"🍶", title:"Саке — Dassai 獺祭 (20 мл)", price:"1,300 AMD", desc:"Премиум японское саке." },
+    { emoji:"🍶", title:"Саке — Dassai 獺祭 (40 мл)", price:"2,500 AMD", desc:"Премиум японское саке." },
+    { emoji:"🍶", title:"Саке — Dassai 獺祭 (бутылка 200 мл)", price:"10,000 AMD", desc:"Премиум японское саке." }
+  ],
+  am:[
+    { emoji:"🍵", title:"Сенча Тaйник",       price:"1,600 AMD", desc:"Яponakan кaнaч tey." },
+    { emoji:"🍵", title:"Жaсмин Улун Тaйник", price:"1,600 AMD", desc:"Aнуш уলун." },
+    { emoji:"🍊", title:"Мргaйин Хмор",       price:"700 AMD",   desc:"Խнзор кam нaринч." },
+    { emoji:"💧", title:"Джур",               price:"500 AMD",   desc:"" },
+    { emoji:"🍺", title:"Карcнапак — Asahi / Dargett", price:"1,600 AMD", desc:"Yaponakan Asahi kam teгhayin Dargett." },
+    { emoji:"🍶", title:"Sake — Dassai 獺祭 (20 мл)", price:"1,300 AMD", desc:"Пremiум яponakan сaке." },
+    { emoji:"🍶", title:"Sake — Dassai 獺祭 (40 мл)", price:"2,500 AMD", desc:"Пremiум яponakan сaке." },
+    { emoji:"🍶", title:"Sake — Dassai 獺祭 (200 мл шиш)", price:"10,000 AMD", desc:"Пremiум яponakan сaке." }
+  ]
+};
+
+const TAG_L = {
+  spicy:{ en:"Spicy",       ru:"Острый",       am:"Կծու"   },
+  veg:  { en:"Vegetarian",  ru:"Вегетарианск.",am:"Вег"    },
+  vegan:{ en:"Vegan",       ru:"Веганское",    am:"Веган"  },
+  halal:{ en:"Halal",       ru:"Халяль",       am:"Halal"  },
+  rich: { en:"Rich Broth",  ru:"Насыщ. бульон",am:"Hаруст" }
+};
+
+const SEC_L = {
+  ramen:   { en:"Ramen",    ru:"Рамен",    am:"Ռամен"   },
+  toppings:{ en:"Toppings", ru:"Добавки",  am:"Toppings" },
+  dessert: { en:"Desserts", ru:"Десерты",  am:"Avetar"  },
+  drinks:  { en:"Drinks",   ru:"Напитки",  am:"Xмичk"   }
+};
+
+const NOTE_L = {
+  en:"All broths are made fresh daily. No artificial flavours or chemical additives. Please inform your server of any allergies.",
+  ru:"Бульоны готовятся свежими каждый день. Без искусственных ароматизаторов. Сообщите официанту об аллергиях.",
+  am:"Apурнeрн тaзa en пaтрaствum aмен ор. Aрhеставoр нyутer kaм хим. helavanum. Xndrum en tegekacnel sparavorin aleрgianeри masин."
+};
+
+const IMAP = {"醤油ラーメン / 清湯": "https://raw.githubusercontent.com/akirakishi11-gif/Menu/main/shoyu.jpeg", "スパイシー醤油ラーメン / 辛いたれ": "https://raw.githubusercontent.com/akirakishi11-gif/Menu/main/shoyu%202.jpeg", "味噌ラーメン / 白湯": "https://raw.githubusercontent.com/akirakishi11-gif/Menu/main/miso.jpeg", "スパイシー味噌ラーメン / 坦々麺": "https://raw.githubusercontent.com/akirakishi11-gif/Menu/main/spicy%20miso.jpeg", "豚骨ラーメン / 三日間スープ": "https://raw.githubusercontent.com/akirakishi11-gif/Menu/main/tonkotsu.jpeg", "ベジタリアン担々麺 / 野菜": "https://raw.githubusercontent.com/akirakishi11-gif/Menu/main/tantan.jpeg", "ビーガン担々麺 / 野菜": "https://raw.githubusercontent.com/akirakishi11-gif/Menu/main/tantan.jpeg"};
+
+// ══════════════════════════════════════════
+let lang = 'en';
+let tab  = 'ramen';
+
+function renderRamen(){
+  const c = document.getElementById('container');
+  c.innerHTML = `<div class="sec-title">${SEC_L[tab][lang]}</div>`;
+  RAMEN.forEach((item,i) => {
+    const tagsHtml = item.tags.map(function(t){ return '<span class="tag tag-'+t+'">'+TAG_L[t][lang]+'</span>'; }).join('');
+    const el = document.createElement('div');
+    el.className = 'item';
+    el.style.animationDelay = (i*.05)+'s';
+
+    const imgSrc = IMAP[item.jp];
+    const plate = document.createElement('div');
+    plate.className = 'plate';
+    if(imgSrc){
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = '';
+      img.addEventListener('click', (function(s){ return function(){ openModal(s); }; })(imgSrc));
+      plate.appendChild(img);
+    } else {
+      plate.textContent = item.emoji;
+    }
+
+    el.appendChild(plate);
+    el.insertAdjacentHTML('beforeend',
+      '<div class="body">'+
+        '<div class="name">'+item[lang].name+'</div>'+
+        '<div class="jp">'+item.jp+'</div>'+
+        '<div class="desc">'+item[lang].desc+'</div>'+
+        '<div class="tags">'+tagsHtml+'</div>'+
+      '</div>'+
+      '<div class="right">'+
+        '<div class="price">'+item.std+'</div>'+
+        '<div class="price-mega">'+item.mega+'</div>'+
+      '</div>'
+    );
+    c.appendChild(el);
+  });
+  c.insertAdjacentHTML('beforeend',`<div class="note">${NOTE_L[lang]}</div>`);
+}
+
+function renderToppings(){
+  const c = document.getElementById('container');
+  c.innerHTML = `<div class="sec-title">${SEC_L[tab][lang]}</div>`;
+  TOPPINGS[lang].forEach((t,i)=>{
+    const el = document.createElement('div');
+    el.className = 'topping-row';
+    el.style.animationDelay = (i*.05)+'s';
+    el.innerHTML = `<span class="topping-name">${t.name}</span><span class="topping-price">${t.price}</span>`;
+    c.appendChild(el);
+  });
+}
+
+function renderCards(data){
+  const c = document.getElementById('container');
+  c.innerHTML = `<div class="sec-title">${SEC_L[tab][lang]}</div>`;
+  const grid = document.createElement('div');
+  grid.className = 'card-grid';
+  data[lang].forEach((item,i)=>{
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.style.animationDelay = (i*.05)+'s';
+    el.innerHTML = `
+      <div style="font-size:1.5rem;margin-bottom:8px">${item.emoji}</div>
+      <div class="card-title">${item.title}</div>
+      <div class="card-price">${item.price}</div>
+      <div class="card-desc">${item.desc}</div>`;
+    grid.appendChild(el);
+  });
+  c.appendChild(grid);
+}
+
+function render(){
+  if(tab==='ramen')    renderRamen();
+  else if(tab==='toppings') renderToppings();
+  else if(tab==='dessert')  renderCards(DESSERTS);
+  else if(tab==='drinks')   renderCards(DRINKS);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Tabs
+document.querySelector('.tab-bar').addEventListener('click',e=>{
+  const b = e.target.closest('.tab-btn');
+  if(!b) return;
+  document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  tab = b.dataset.tab;
+  render();
+});
+
+// Lang
+document.querySelector('.lang-sw').addEventListener('click',e=>{
+  const b = e.target.closest('.lang-btn');
+  if(!b) return;
+  document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  lang = b.dataset.lang;
+  render();
+});
+
+// Scroll top
+const stBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll',()=> stBtn.classList.toggle('on', scrollY>280));
+stBtn.addEventListener('click',()=> window.scrollTo({top:0,behavior:'smooth'}));
+
+render();
+
+const modal = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImg');
+document.getElementById('modalClose').addEventListener('click', function(){ modal.classList.remove('open'); });
+modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('open'); });
+function openModal(src){ modalImg.src = src; modal.classList.add('open'); }
+
+</script>
+
+<div class="modal-overlay" id="imgModal">
+  <button class="modal-close" id="modalClose">&#x2715;</button>
+  <img id="modalImg" src="" alt="">
+</div>
+</body>
+</html>
