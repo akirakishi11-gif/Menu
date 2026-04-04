@@ -1368,53 +1368,56 @@
       <div class="section-jp">
         <span data-lang="en">Desserts</span>
         <span data-lang="ru">Десерты</span>
-        <span data-lang="hy">Աղանդեր</span>
-      </div>
-      <div class="section-en">デザート</div>
+        <span data-lang="hy">Աղանդեր</
+            </div>
     </div>
-  </div>
-  <div class="menu-list">
-  <div class="menu-item reveal">
-    <div>
-        <img src="images/matcha_ice.jpg" alt="Matcha Ice Cream" style="width:100%; max-width:300px; display: block; margin-bottom: 10px;">
-        
-        <div class="item-name">
+
+    <div class="menu-list">
+      <div class="menu-item reveal">
+        <div>
+          <img src="IMG_0644.jpeg" alt="Matcha Ice Cream" style="width:100%; max-width:300px; display: block; margin: 0 auto 10px auto;">
+          <div class="item-name">
             <span data-lang="en">Matcha Ice Cream</span>
             <span data-lang="ru">Мороженое из матча</span>
             <span data-lang="hy">Մատչա պաղպաղակ</span>
+          </div>
+          <div class="item-sub">Home made</div>
         </div>
-        <div class="item-sub">Home made</div>
-    </div>
-    <div class="item-price">2,000 AMD</div>
-</div>
-  
- <div class="item-name">
-          <span data-lang="en">Matcha Ice Cream</span>
-          <span data-lang="ru">Мороженое с маття</span>
-          <span data-lang="hy">Մatcha Պաղpat</span>
-        </div>
+        <div class="item-price">2,000 AMD</div>
       </div>
-      <div class="item-price">2,000 AMD</div>
-    </div>
-    <div class="menu-item reveal">
-      <div>
-        <div class="item-name">
-          <span data-lang="en">Weekly Dessert</span>
-          <span data-lang="ru">Еженедельный десерт</span>
-          <span data-lang="hy">Շաբաthly Աղandeր</span>
-        </div>
-        <div class="item-sub">
-          <span data-lang="en">Ask our staff for today's selection ❓</span>
-          <span data-lang="ru">Спросите сотрудника о сегодняшнем выборе ❓</span>
-          <span data-lang="hy">Հարցրեք մատուցողին ❓</span>
-        </div>
-      </div>
-      <div class="item-price">1,500 AMD</div>
-    </div>
-  </div>
-</section>
 
-<div class="sep"><div class="sep-line"></div><div class="sep-icon">✦ ✦ ✦</div><div class="sep-line"></div></div>
+
+      </div>
+      <div class="menu-item reveal">
+        <div>
+          <div class="item-name">
+            <span data-lang="en">Weekly Dessert</span>
+            <span data-lang="ru">Еженедельный десерт</span>
+            <span data-lang="hy">Շաբաթական Աղանդեր</span>
+          </div>
+          <div class="item-sub">
+            <span data-lang="en">Ask our staff for today's selection</span>
+            <span data-lang="ru">Спросите сотрудников о сегодняшнем выборе</span>
+            <span data-lang="hy">Հարցրեք մատուցողին այսօրվա տեսականու համար</span>
+          </div>
+        </div>
+        <div class="item-price">1,500 AMD</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"><div class="sep-line"></div></div>
+
+  `** となっていれば完璧です。
+4.  画面を一番下までスクロールして、緑色の **「Commit changes」** ボタンを押して保存してください。
+
+### これで直る理由
+* **構造の修復**: 途切れていた `<div>` や `</section>` をすべて正しく閉じ直しました。
+* **ノイズの除去**: `v` や `ion` 、 `lass="sep"` といった壊れたコードを削除しました。
+* **写真の確定**: アップロード済みの `IMG_0644.jpeg` を表示するように設定しました。
+
+少し範囲が広いですが、ここを入れ替えるのが復活への一番の近道です！頑張りましょう。
+
 
 <!-- ══════ DRINKS ══════ -->
 <section id="drinks">
