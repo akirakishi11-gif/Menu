@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miso Ramen - Ingredients</title>
+  <style>
+    :root {
+      --ink: #1a1008;
+      --gold: #a09070;
+      --muted: #7a6a5a;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #fdf6ee;
+      color: var(--ink);
+    }
+    .lang-bar {
+      background: var(--ink);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5rem 1.2rem;
+      gap: 0.3rem;
+      border-bottom: 1px solid #2e2418;
+    }
+    .lang-bar span {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      margin-right: 0.5rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid #3a2f22;
+      color: #a09070;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+    .hero {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+    .content {
+      padding: 24px 20px;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0 0 20px;
+    }
+    h3 {
+      font-size: 15px;
+      color: #8B6914;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 20px 0 8px;
+      border-bottom: 1px solid #d4c4a0;
+      padding-bottom: 4px;
+    }
+    ul {
+      margin: 0 0 8px;
+      padding-left: 18px;
+    }
+    li {
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    li span {
+      color: var(--muted);
+      font-size: 13px;
+      font-style: italic;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 16px;
+      color: #8B6914;
+      text-decoration: none;
+    }
+    [data-lang] { display: none; }
+    [data-lang="en"] { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-bar">
+    <span>LANG /</span>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('hy')">HY</button>
+  </div>
+
+  <img class="hero" src="miso.png" alt="Miso Ramen">
+
+  <div class="content">
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <h1>Miso Ramen</h1>
+      <h3>Soup</h3>
+      <ul>
+        <li>Chicken</li>
+        <li>Soy milk</li>
+      </ul>
+      <h3>Sauce — House Miso Mix</h3>
+      <ul>
+        <li>Blended miso <span>(white & red)</span></li>
+        <li>Lard</li>
+        <li>Sesame oil</li>
+        <li>Onion</li>
+        <li>Garlic</li>
+        <li>Ginger</li>
+        <li>Soy sauce <span>(contains gluten)</span></li>
+        <li>Mirin <span>(Japanese sweet rice wine)</span></li>
+        <li>Gochujang <span>(Korean spicy fermented paste)</span></li>
+        <li>Worcestershire sauce</li>
+        <li>Tahini <span>(sesame paste)</span></li>
+        <li>Sugar</li>
+        <li>Sea salt</li>
+        <li>Black pepper</li>
+        <li>Hua jiao <span>(Chinese Sichuan pepper)</span></li>
+        <li>Chili powder</li>
+      </ul>
+      <h3>Toppings</h3>
+      <ul>
+        <li>Pork chashu <span>(slow-cooked marinated pork)</span></li>
+        <li>Egg <span>(seasoned soft-boiled egg)</span></li>
+        <li>Green onion</li>
+        <li>Red onion</li>
+        <li>White sesame</li>
+        <li>Fried onion & garlic</li>
+      </ul>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div data-lang="ru">
+      <h1>Рамен Мисо</h1>
+      <h3>Суп</h3>
+      <ul>
+        <li>Курица</li>
+        <li>Соевое молоко</li>
+      </ul>
+      <h3>Соус — Фирменная Смесь Мисо</h3>
+      <ul>
+        <li>Смешанное мисо <span>(белое и красное)</span></li>
+        <li>Свиной жир</li>
+        <li>Кунжутное масло</li>
+        <li>Лук</li>
+        <li>Чеснок</li>
+        <li>Имбирь</li>
+        <li>Соевый соус <span>(содержит глютен)</span></li>
+        <li>Мирин <span>(японское сладкое рисовое вино)</span></li>
+        <li>Кочуджан <span>(корейская острая ферментированная паста)</span></li>
+        <li>Вустерский соус</li>
+        <li>Тахини <span>(кунжутная паста)</span></li>
+        <li>Сахар</li>
+        <li>Морская соль</li>
+        <li>Чёрный перец</li>
+        <li>Хуа цзяо <span>(китайский сычуаньский перец)</span></li>
+        <li>Порошок чили</li>
+      </ul>
+      <h3>Топпинги</h3>
+      <ul>
+        <li>Свинина тясю <span>(томлёная маринованная свинина)</span></li>
+        <li>Яйцо <span>(маринованное яйцо всмятку)</span></li>
+        <li>Зелёный лук</li>
+        <li>Красный лук</li>
+        <li>Белый кунжут</li>
+        <li>Жареный лук и чеснок</li>
+      </ul>
+    </div>
+
+    <!-- ARMENIAN -->
+    <div data-lang="hy">
+      <h1>Միսո Ռամեն</h1>
+      <h3>Ապուր</h3>
+      <ul>
+        <li>Հավ</li>
+        <li>Սոյայի կաթ</li>
+      </ul>
+      <h3>Սոուս — Տնական Միսո Միքս</h3>
+      <ul>
+        <li>Խառը միսո <span>(սպիտակ և կարմիր)</span></li>
+        <li>Խոզի ճարպ</li>
+        <li>Քնջութի յուղ</li>
+        <li>Սոխ</li>
+        <li>Սխտոր</li>
+        <li>Կոճապղպեղ</li>
+        <li>Սոյայի սոուս <span>(պարունակում է գլյուտեն)</span></li>
+        <li>Միրին <span>(ճապոնական քաղցր բրնձի գինի)</span></li>
+        <li>Կոչուջան <span>(կորեական կծու խմորված մածուկ)</span></li>
+        <li>Վուստերի սոուս</li>
+        <li>Թահինի <span>(քնջութի մածուկ)</span></li>
+        <li>Շաքար</li>
+        <li>Ծովի աղ</li>
+        <li>Սև պղպեղ</li>
+        <li>Հուա ձյաո <span>(չինական սիչուանի պղպեղ)</span></li>
+        <li>Չիլի փոշի</li>
+      </ul>
+      <h3>Տոպինգներ</h3>
+      <ul>
+        <li>Խոզի չաշու <span>(դանդաղ եփված մարինացված խոզ)</span></li>
+        <li>Ձու <span>(համեմված կիսահում ձու)</span></li>
+        <li>Կանաչ սոխ</li>
+        <li>Կարմիր սոխ</li>
+        <li>Սպիտակ քնջութ</li>
+        <li>Տապակած սոխ և սխտոր</li>
+      </ul>
+    </div>
+
+    <a class="back" href="index.html">← Back to Menu</a>
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
 
