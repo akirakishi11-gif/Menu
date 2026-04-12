@@ -5,11 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shoyu Ramen - Ingredients</title>
   <style>
+    :root {
+      --ink: #1a1008;
+      --gold: #a09070;
+      --muted: #7a6a5a;
+    }
     body {
       margin: 0;
       font-family: Georgia, serif;
       background: #fdf6ee;
-      color: #2c1a0e;
+      color: var(--ink);
+    }
+    .lang-bar {
+      background: var(--ink);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5rem 1.2rem;
+      gap: 0.3rem;
+      border-bottom: 1px solid #2e2418;
+    }
+    .lang-bar span {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      margin-right: 0.5rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid #3a2f22;
+      color: #a09070;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink);
     }
     .hero {
       width: 100%;
@@ -41,15 +76,55 @@
       color: #8B6914;
       text-decoration: none;
     }
+    [data-lang] { display: none; }
+    [data-lang="en"] { display: block; }
   </style>
 </head>
 <body>
-  <img class="hero" src="shoyu.png">
-  <div class="content">
-    <h1>Shoyu Ramen</h1>
-    <h2>Ingredients</h2>
-    <p>Soup, sauce & topping: Chicken, kombu (Japanese kelp), apple, onion, garlic, soy sauce, tuna flakes, seashell, apple vinegar, pork broth, marinated pork, egg, green onion, red onion and sesame</p>
-    <a class="back" href="index.html">← Back to Menu</a>
+
+  <div class="lang-bar">
+    <span>LANG /</span>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('hy')">HY</button>
   </div>
+
+  <img class="hero" src="shoyu-ramen.jpg" alt="Shoyu Ramen">
+
+  <div class="content">
+
+    <h1>
+      <span data-lang="en">Shoyu Ramen</span>
+      <span data-lang="ru">Рамен Сёю</span>
+      <span data-lang="hy">Շոյու Ռամեն</span>
+    </h1>
+
+    <h2>
+      <span data-lang="en">Ingredients</span>
+      <span data-lang="ru">Ингредиенты</span>
+      <span data-lang="hy">Բաղադրիչներ</span>
+    </h2>
+
+    <p>
+      <span data-lang="en">Soup, sauce & topping: Chicken, kombu (Japanese kelp), apple, onion, garlic, soy sauce, tuna flakes, seashell, apple vinegar, pork broth, marinated pork, egg, green onion, red onion and sesame</span>
+      <span data-lang="ru">Суп, соус и топпинг: Курица, комбу (японские водоросли), яблоко, лук, чеснок, соевый соус, тунец хлопьями, морская ракушка, яблочный уксус, свиной бульон, маринованная свинина, яйцо, зелёный лук, красный лук и кунжут</span>
+      <span data-lang="hy">Ապուր, սոուս և տոպինգ: Հավ, կոմբու (ճապոնական ջրիմուռ), խնձոր, սոխ, սխտոր, սոյայի սոուս, թունա փաթիլներ, խեցի, խնձորի քացախ, խոզի արգանակ, մարինացված խոզ, ձու, կանաչ սոխ, կարմիր սոխ և կնջիթ</span>
+    </p>
+
+    <a class="back" href="index.html">← Back to Menu</a>
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+  </script>
+
 </body>
 </html>
