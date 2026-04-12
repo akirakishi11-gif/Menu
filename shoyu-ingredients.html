@@ -100,7 +100,7 @@
     <button class="lang-btn" onclick="setLang('hy')">HY</button>
   </div>
 
-  <img class="hero" src="shoyu.png">
+  <img class="hero" src="shoyu.png" alt="Shoyu Ramen">
 
   <div class="content">
 
@@ -121,7 +121,7 @@
         <li>Soy sauce <span>(contains gluten & pork extract)</span></li>
         <li>Sea salt</li>
         <li>Mirin <span>(Japanese sweet rice wine)</span></li>
-        <li>Fish sauce</li>
+        <li>Fish sauce <span>(fermented fish)</span></li>
         <li>Apple vinegar</li>
         <li>Dried shrimp</li>
         <li>Bonito flakes <span>(dried tuna)</span></li>
@@ -131,8 +131,8 @@
       </ul>
       <h3>Toppings</h3>
       <ul>
-        <li>Pork chashu</li>
-        <li>Egg</li>
+        <li>Pork chashu <span>(slow-cooked marinated pork)</span></li>
+        <li>Egg <span>(seasoned soft-boiled egg)</span></li>
         <li>Green onion</li>
         <li>Red onion</li>
         <li>White sesame</li>
@@ -157,7 +157,7 @@
         <li>Соевый соус <span>(содержит глютен и экстракт свинины)</span></li>
         <li>Морская соль</li>
         <li>Мирин <span>(японское сладкое рисовое вино)</span></li>
-        <li>Рыбный соус</li>
+        <li>Рыбный соус <span>(ферментированная рыба)</span></li>
         <li>Яблочный уксус</li>
         <li>Сушёные креветки</li>
         <li>Хлопья бонито <span>(сушёный тунец)</span></li>
@@ -167,8 +167,8 @@
       </ul>
       <h3>Топпинги</h3>
       <ul>
-        <li>Свинина тясю</li>
-        <li>Яйцо</li>
+        <li>Свинина тясю <span>(томлёная маринованная свинина)</span></li>
+        <li>Яйцо <span>(маринованное яйцо всмятку)</span></li>
         <li>Зелёный лук</li>
         <li>Красный лук</li>
         <li>Белый кунжут</li>
@@ -193,7 +193,7 @@
         <li>Սոյայի սոուս <span>(պարունակում է գլյուտեն և խոզի էքստրակտ)</span></li>
         <li>Ծովի աղ</li>
         <li>Միրին <span>(ճապոնական քաղցր բրնձի գինի)</span></li>
-        <li>Ձկան սոուս</li>
+        <li>Ձկան սոուս <span>(խմորված ձուկ)</span></li>
         <li>Խնձորի քացախ</li>
         <li>Չորացված մանր ծովախեցգետին</li>
         <li>Բոնիտոյի փաթիլներ <span>(չորացված թունա)</span></li>
@@ -203,29 +203,5 @@
       </ul>
       <h3>Տոպինգներ</h3>
       <ul>
-        <li>Խոզի չաշու</li>
-        <li>Ձու</li>
-        <li>Կանաչ սոխ</li>
-        <li>Կարմիր սոխ</li>
-        <li>Սպիտակ քնջութ</li>
-        <li>Տապակած սոխ և սխտոր</li>
-      </ul>
-    </div>
-
-    <a class="back" href="index.html">← Back to Menu</a>
-
-  </div>
-
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-      });
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-      });
-    }
-  </script>
-
-</body>
-</html>
+        <li>Խոզի չաշու <span>(դանդաղ եփված մարինացված խոզ)</span></li>
+        <li>Ձու <span>(համեմված կիսահում ձու​​​​​​​​​​​​​​​​
