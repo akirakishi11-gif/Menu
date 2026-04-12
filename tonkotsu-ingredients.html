@@ -21,4 +21,199 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding: 0​​​​​​​​​​​​​​​​
+      padding: 0.5rem 1.2rem;
+      gap: 0.3rem;
+      border-bottom: 1px solid #2e2418;
+    }
+    .lang-bar span {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      margin-right: 0.5rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid #3a2f22;
+      color: #a09070;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+    .hero {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+    .content {
+      padding: 24px 20px;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0 0 20px;
+    }
+    h3 {
+      font-size: 15px;
+      color: #8B6914;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 20px 0 8px;
+      border-bottom: 1px solid #d4c4a0;
+      padding-bottom: 4px;
+    }
+    ul {
+      margin: 0 0 8px;
+      padding-left: 18px;
+    }
+    li {
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    li span {
+      color: var(--muted);
+      font-size: 13px;
+      font-style: italic;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 16px;
+      color: #8B6914;
+      text-decoration: none;
+    }
+    [data-lang] { display: none; }
+    [data-lang="en"] { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-bar">
+    <span>LANG /</span>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('hy')">HY</button>
+  </div>
+
+  <img class="hero" src="tonkotsu.png" alt="Tonkotsu Ramen">
+
+  <div class="content">
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <h1>Tonkotsu Ramen</h1>
+      <h3>Soup</h3>
+      <ul>
+        <li>Pork bones</li>
+        <li>Kombu <span>(dried seaweed)</span></li>
+      </ul>
+      <h3>Sauce</h3>
+      <ul>
+        <li>Soy sauce <span>(contains gluten & pork extract)</span></li>
+        <li>Sea salt</li>
+        <li>Mirin <span>(Japanese sweet rice wine)</span></li>
+        <li>Fish sauce <span>(fermented fish)</span></li>
+        <li>Apple vinegar</li>
+        <li>Dried shrimp</li>
+        <li>Bonito flakes <span>(dried tuna)</span></li>
+        <li>Kombu <span>(dried seaweed)</span></li>
+        <li>Red chili pepper</li>
+        <li>Black pepper</li>
+      </ul>
+      <h3>Toppings</h3>
+      <ul>
+        <li>Pork chashu <span>(slow-cooked marinated pork)</span></li>
+        <li>Egg <span>(seasoned soft-boiled egg)</span></li>
+        <li>Green onion</li>
+        <li>Red onion</li>
+        <li>White sesame</li>
+        <li>Fried onion & garlic</li>
+      </ul>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div data-lang="ru">
+      <h1>Рамен Тонкоцу</h1>
+      <h3>Суп</h3>
+      <ul>
+        <li>Свиные кости</li>
+        <li>Комбу <span>(сушёные водоросли)</span></li>
+      </ul>
+      <h3>Соус</h3>
+      <ul>
+        <li>Соевый соус <span>(содержит глютен и экстракт свинины)</span></li>
+        <li>Морская соль</li>
+        <li>Мирин <span>(японское сладкое рисовое вино)</span></li>
+        <li>Рыбный соус <span>(ферментированная рыба)</span></li>
+        <li>Яблочный уксус</li>
+        <li>Сушёные креветки</li>
+        <li>Хлопья бонито <span>(сушёный тунец)</span></li>
+        <li>Комбу <span>(сушёные водоросли)</span></li>
+        <li>Красный перец чили</li>
+        <li>Чёрный перец</li>
+      </ul>
+      <h3>Топпинги</h3>
+      <ul>
+        <li>Свинина тясю <span>(томлёная маринованная свинина)</span></li>
+        <li>Яйцо <span>(маринованное яйцо всмятку)</span></li>
+        <li>Зелёный лук</li>
+        <li>Красный лук</li>
+        <li>Белый кунжут</li>
+        <li>Жареный лук и чеснок</li>
+      </ul>
+    </div>
+
+    <!-- ARMENIAN -->
+    <div data-lang="hy">
+      <h1>Տոնկոցու Ռամեն</h1>
+      <h3>Ապուր</h3>
+      <ul>
+        <li>Խոզի ոսկորներ</li>
+        <li>Կոմբու <span>(չորացված ծովային ջրիմուռ)</span></li>
+      </ul>
+      <h3>Սոուս</h3>
+      <ul>
+        <li>Սոյայի սոուս <span>(պարունակում է գլյուտեն և խոզի էքստրակտ)</span></li>
+        <li>Ծովի աղ</li>
+        <li>Միրին <span>(ճապոնական քաղցր բրնձի գինի)</span></li>
+        <li>Ձկան սոուս <span>(խմորված ձուկ)</span></li>
+        <li>Խնձորի քացախ</li>
+        <li>Չորացված մանր ծովախեցգետին</li>
+        <li>Բոնիտոյի փաթիլներ <span>(չորացված թունա)</span></li>
+        <li>Կոմբու <span>(չորացված ծովային ջրիմուռ)</span></li>
+        <li>Կարմիր չիլի պղպեղ</li>
+        <li>Սև պղպեղ</li>
+      </ul>
+      <h3>Տոպինգներ</h3>
+      <ul>
+        <li>Խոզի չաշու <span>(դանդաղ եփված մարինացված խոզ)</span></li>
+        <li>Ձու <span>(համեմված կիսահում ձու)</span></li>
+        <li>Կանաչ սոխ</li>
+        <li>Կարմիր սոխ</li>
+        <li>Սպիտակ քնջութ</li>
+        <li>Տապակած սոխ և սխտոր</li>
+      </ul>
+    </div>
+
+    <a class="back" href="index.html">← Back to Menu</a>
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
