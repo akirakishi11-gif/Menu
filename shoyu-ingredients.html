@@ -56,18 +56,29 @@
     }
     h1 {
       font-size: 28px;
-      margin: 0 0 8px;
+      margin: 0 0 20px;
     }
-    h2 {
-      font-size: 18px;
+    h3 {
+      font-size: 15px;
       color: #8B6914;
-      margin: 0 0 16px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      margin: 20px 0 8px;
+      border-bottom: 1px solid #d4c4a0;
+      padding-bottom: 4px;
     }
-    p {
-      font-size: 17px;
-      line-height: 1.8;
+    ul {
+      margin: 0 0 8px;
+      padding-left: 18px;
+    }
+    li {
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    li span {
+      color: var(--muted);
+      font-size: 13px;
+      font-style: italic;
     }
     .back {
       display: inline-block;
@@ -89,27 +100,114 @@
     <button class="lang-btn" onclick="setLang('hy')">HY</button>
   </div>
 
-  <img class="hero" src="shoyu.png">
+  <img class="hero" src="shoyu-ramen.jpg" alt="Shoyu Ramen">
 
   <div class="content">
 
-    <h1>
-      <span data-lang="en">Shoyu Ramen</span>
-      <span data-lang="ru">Рамен Сёю</span>
-      <span data-lang="hy">Շոյու Ռամեն</span>
-    </h1>
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <h1>Shoyu Ramen</h1>
+      <h3>Soup</h3>
+      <ul>
+        <li>Chicken</li>
+        <li>Clams <span>(shellfish)</span></li>
+        <li>Apple</li>
+        <li>Bonito flakes <span>(dried tuna)</span></li>
+        <li>Kombu <span>(dried seaweed)</span></li>
+        <li>Red chili pepper</li>
+      </ul>
+      <h3>Sauce</h3>
+      <ul>
+        <li>Soy sauce <span>(contains gluten & pork extract)</span></li>
+        <li>Sea salt</li>
+        <li>Mirin <span>(Japanese sweet rice wine)</span></li>
+        <li>Fish sauce</li>
+        <li>Apple vinegar</li>
+        <li>Dried shrimp</li>
+        <li>Bonito flakes <span>(dried tuna)</span></li>
+        <li>Kombu <span>(dried seaweed)</span></li>
+        <li>Red chili pepper</li>
+        <li>Black pepper</li>
+      </ul>
+      <h3>Toppings</h3>
+      <ul>
+        <li>Pork chashu</li>
+        <li>Green onion</li>
+        <li>Red onion</li>
+        <li>White sesame</li>
+        <li>Fried onion & garlic</li>
+      </ul>
+    </div>
 
-    <h2>
-      <span data-lang="en">Ingredients</span>
-      <span data-lang="ru">Ингредиенты</span>
-      <span data-lang="hy">Բաղադրիչներ</span>
-    </h2>
+    <!-- RUSSIAN -->
+    <div data-lang="ru">
+      <h1>Рамен Сёю</h1>
+      <h3>Суп</h3>
+      <ul>
+        <li>Курица</li>
+        <li>Моллюски <span>(ракушки)</span></li>
+        <li>Яблоко</li>
+        <li>Хлопья бонито <span>(сушёный тунец)</span></li>
+        <li>Комбу <span>(сушёные водоросли)</span></li>
+        <li>Красный перец чили</li>
+      </ul>
+      <h3>Соус</h3>
+      <ul>
+        <li>Соевый соус <span>(содержит глютен и экстракт свинины)</span></li>
+        <li>Морская соль</li>
+        <li>Мирин <span>(японское сладкое рисовое вино)</span></li>
+        <li>Рыбный соус</li>
+        <li>Яблочный уксус</li>
+        <li>Сушёные креветки</li>
+        <li>Хлопья бонито <span>(сушёный тунец)</span></li>
+        <li>Комбу <span>(сушёные водоросли)</span></li>
+        <li>Красный перец чили</li>
+        <li>Чёрный перец</li>
+      </ul>
+      <h3>Топпинги</h3>
+      <ul>
+        <li>Свинина тясю</li>
+        <li>Зелёный лук</li>
+        <li>Красный лук</li>
+        <li>Белый кунжут</li>
+        <li>Жареный лук и чеснок</li>
+      </ul>
+    </div>
 
-    <p>
-      <span data-lang="en">Soup, sauce & topping: Chicken, kombu (Japanese kelp), apple, onion, garlic, soy sauce, tuna flakes, seashell, apple vinegar, pork broth, marinated pork, egg, green onion, red onion and sesame</span>
-      <span data-lang="ru">Суп, соус и топпинг: Курица, комбу (японские водоросли), яблоко, лук, чеснок, соевый соус, тунец хлопьями, морская ракушка, яблочный уксус, свиной бульон, маринованная свинина, яйцо, зелёный лук, красный лук и кунжут</span>
-      <span data-lang="hy">Ապուր, սոուս և տոպինգ: Հավ, կոմբու (ճապոնական ջրիմուռ), խնձոր, սոխ, սխտոր, սոյայի սոուս, թունա փաթիլներ, խեցի, խնձորի քացախ, խոզի արգանակ, մարինացված խոզ, ձու, կանաչ սոխ, կարմիր սոխ և կնջիթ</span>
-    </p>
+    <!-- ARMENIAN -->
+    <div data-lang="hy">
+      <h1>Շոյու Ռամեն</h1>
+      <h3>Ապուր</h3>
+      <ul>
+        <li>Հավ</li>
+        <li>Խեցգետնակեր <span>(խեցեմորթ)</span></li>
+        <li>Խնձոր</li>
+        <li>Բոնիտոյի փաթիլներ <span>(չորացված թունա)</span></li>
+        <li>Կոմբու <span>(չորացված ծովային ջրիմուռ)</span></li>
+        <li>Կարմիր չիլի պղպեղ</li>
+      </ul>
+      <h3>Սոուս</h3>
+      <ul>
+        <li>Սոյայի սոուս <span>(պարունակում է գլյուտեն և խոզի էքստրակտ)</span></li>
+        <li>Ծովի աղ</li>
+        <li>Միրին <span>(ճապոնական քաղցր բրնձի գինի)</span></li>
+        <li>Ձկան սոուս</li>
+        <li>Խնձորի քացախ</li>
+        <li>Չորացված մանր ծովախեցգետին</li>
+        <li>Բոնիտոյի փաթիլներ <span>(չորացված թունա)</span></li>
+        <li>Կոմբու <span>(չորացված ծովային ջրիմուռ)</span></li>
+        <li>Կարմիր չիլի պղպեղ</li>
+        <li>Սև պղպեղ</li>
+      </ul>
+      <h3>Տոպինգներ</h3>
+      <ul>
+        <li>Խոզի չաշու</li>
+        <li>Կանաչ սոխ</li>
+        <li>Կարմիր սոխ</li>
+        <li>Սպիտակ քնջութ</li>
+        <li>Տապակած սոխ և սխտոր</li>
+      </ul>
+    </div>
 
     <a class="back" href="index.html">← Back to Menu</a>
 
