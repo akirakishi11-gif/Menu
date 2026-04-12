@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shoyu Ramen - Ingredients</title>
+  <title>Spicy Shoyu Ramen - Ingredients</title>
   <style>
     :root {
       --ink: #1a1008;
@@ -100,13 +100,13 @@
     <button class="lang-btn" onclick="setLang('hy')">HY</button>
   </div>
 
-  <img class="hero" src="shoyu.png" alt="Shoyu Ramen">
+  <img class="hero" src="spicy.shoyu.png" alt="Spicy Shoyu Ramen">
 
   <div class="content">
 
     <!-- ENGLISH -->
     <div data-lang="en">
-      <h1>Shoyu Ramen</h1>
+      <h1>Spicy Shoyu Ramen</h1>
       <h3>Soup</h3>
       <ul>
         <li>Chicken</li>
@@ -128,21 +128,24 @@
         <li>Kombu <span>(dried seaweed)</span></li>
         <li>Red chili pepper</li>
         <li>Black pepper</li>
+        <li>House chili mix <span>(three varieties)</span></li>
       </ul>
       <h3>Toppings</h3>
       <ul>
-        <li>Pork chashu <span>(slow-cooked marinated pork)</span></li>
+        <li>Spicy ground pork</li>
         <li>Egg <span>(seasoned soft-boiled egg)</span></li>
         <li>Green onion</li>
         <li>Red onion</li>
         <li>White sesame</li>
         <li>Fried onion & garlic</li>
+        <li>Chili oil</li>
+        <li>Doubanjiang <span>(spicy fermented bean paste)</span></li>
       </ul>
     </div>
 
     <!-- RUSSIAN -->
     <div data-lang="ru">
-      <h1>Рамен Сёю</h1>
+      <h1>Острый Рамен Сёю</h1>
       <h3>Суп</h3>
       <ul>
         <li>Курица</li>
@@ -164,21 +167,24 @@
         <li>Комбу <span>(сушёные водоросли)</span></li>
         <li>Красный перец чили</li>
         <li>Чёрный перец</li>
+        <li>Смесь чили <span>(три вида)</span></li>
       </ul>
       <h3>Топпинги</h3>
       <ul>
-        <li>Свинина тясю <span>(томлёная маринованная свинина)</span></li>
+        <li>Острый фарш из свинины</li>
         <li>Яйцо <span>(маринованное яйцо всмятку)</span></li>
         <li>Зелёный лук</li>
         <li>Красный лук</li>
         <li>Белый кунжут</li>
         <li>Жареный лук и чеснок</li>
+        <li>Масло чили</li>
+        <li>Доубаньцзян <span>(острая ферментированная бобовая паста)</span></li>
       </ul>
     </div>
 
     <!-- ARMENIAN -->
     <div data-lang="hy">
-      <h1>Շոյու Ռամեն</h1>
+      <h1>Կծու Շոյու Ռամեն</h1>
       <h3>Ապուր</h3>
       <ul>
         <li>Հավ</li>
@@ -200,8 +206,35 @@
         <li>Կոմբու <span>(չորացված ծովային ջրիմուռ)</span></li>
         <li>Կարմիր չիլի պղպեղ</li>
         <li>Սև պղպեղ</li>
+        <li>Տնական չիլի միքս <span>(երեք տեսակ)</span></li>
       </ul>
       <h3>Տոպինգներ</h3>
       <ul>
-        <li>Խոզի չաշու <span>(դանդաղ եփված մարինացված խոզ)</span></li>
-        <li>Ձու <span>(համեմված կիսահում ձու​​​​​​​​​​​​​​​​
+        <li>Կծու աղացած խոզ</li>
+        <li>Ձու <span>(համեմված կիսահում ձու)</span></li>
+        <li>Կանաչ սոխ</li>
+        <li>Կարմիր սոխ</li>
+        <li>Սպիտակ քնջութ</li>
+        <li>Տապակած սոխ և սխտոր</li>
+        <li>Չիլի յուղ</li>
+        <li>Դոուբանձյան <span>(կծու խմորված լոբու մածուկ)</span></li>
+      </ul>
+    </div>
+
+    <a class="back" href="index.html">← Back to Menu</a>
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
