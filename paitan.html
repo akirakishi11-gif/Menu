@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How We Make Our Paitan Soup</title>
+  <style>
+    :root {
+      --ink: #1a1008;
+      --gold: #a09070;
+      --muted: #7a6a5a;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #fdf6ee;
+      color: var(--ink);
+    }
+    .lang-bar {
+      background: var(--ink);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5rem 1.2rem;
+      gap: 0.3rem;
+      border-bottom: 1px solid #2e2418;
+    }
+    .lang-bar span {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      margin-right: 0.5rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid #3a2f22;
+      color: #a09070;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+    .content {
+      padding: 24px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 24px;
+      line-height: 1.3;
+    }
+    .step {
+      margin-bottom: 32px;
+    }
+    .step img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 50%;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .step-label {
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+    }
+    .step h3 {
+      font-size: 17px;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+    .step p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0;
+      color: #3a2a1a;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #d4c4a0;
+      margin: 0 0 32px;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 16px;
+      color: #8B6914;
+      text-decoration: none;
+    }
+    [data-lang] { display: none; }
+    [data-lang="en"] { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-bar">
+    <span>LANG /</span>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('hy')">HY</button>
+    <button class="lang-btn" onclick="setLang('ja')">JA</button>
+  </div>
+
+  <div class="content">
+
+```
+<!-- ENGLISH -->
+<div data-lang="en">
+  <h1>How We Make Our Paitan Soup</h1>
+
+  <div class="step">
+    <img src="paitan.1.png" alt="Step 1">
+    <div class="step-label">Step 1 — Building Layers of Bone-Deep Flavor</div>
+    <h3>Chicken Carcass · Feet · Thigh · Whole Chicken</h3>
+    <p>After yielding a refined clear broth, the spent chicken bones are never discarded. Fresh water is added, along with chicken feet, thigh meat, and when needed, whole chicken — drawing out every last note of marrow and collagen. This is where delicate clarity gives way to something bolder and more complex.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.2.png" alt="Step 2">
+    <div class="step-label">Step 2 — The Art of Emulsification</div>
+    <h3>Fat Meets Water — Held Together by Craft</h3>
+    <p>The milky-white color of paitan is the result of deliberate emulsification — fat and water unified through sustained heat. Chicken oil is added as needed to build body. As the broth thickens, it scorches easily, so our chefs stay close, stirring frequently and managing the heat with constant attention.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.3.png" alt="Step 3">
+    <div class="step-label">Step 3 — Finishing with Hand Blender Emulsification</div>
+    <h3>The Step No Home Kitchen Can Replicate</h3>
+    <p>Rather than skimming the fat that rises to the surface, our chefs blend it directly into the broth using a hand blender — breaking fat droplets into a fine emulsion that becomes one with the soup. The result is a gleaming, velvety white liquid. This single step is the defining mark of a professionally crafted paitan.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.4.png" alt="Step 4">
+    <div class="step-label">Step 4 — Refined with Soy Milk, Finished with Precision</div>
+    <h3>Silky Smooth to the Last Drop</h3>
+    <p>A measured addition of soy milk is stirred in and brought to a brief boil — softening the richness and rounding the flavor without masking the depth of the bone broth beneath. The broth is then passed through a fine-mesh strainer, removing any remaining solids to achieve a silky-smooth consistency.</p>
+  </div>
+
+  <a class="back" href="index.html">← Back to Menu</a>
+</div>
+
+<!-- RUSSIAN -->
+<div data-lang="ru">
+  <h1>Как мы готовим бульон Пайтан</h1>
+
+  <div class="step">
+    <img src="paitan.1.png" alt="Шаг 1">
+    <div class="step-label">Шаг 1 — Многослойный вкус из глубины костей</div>
+    <h3>Куриные каркасы · Лапки · Бёдра · Целая курица</h3>
+    <p>После приготовления прозрачного бульона куриные кости никогда не выбрасываются. Добавляется свежая вода, куриные лапки, мясо бёдер, а при необходимости — целая курица. Так из костного мозга и коллагена извлекается всё до последней капли умами.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.2.png" alt="Шаг 2">
+    <div class="step-label">Шаг 2 — Искусство эмульсификации</div>
+    <h3>Жир и вода — объединённые мастерством</h3>
+    <p>Молочно-белый цвет пайтана — результат намеренной эмульсификации жира и воды под воздействием сильного жара. При необходимости добавляется куриное масло. По мере загустения бульон легко пригорает, поэтому повара не отходят от плиты, постоянно помешивая и тщательно контролируя огонь.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.3.png" alt="Шаг 3">
+    <div class="step-label">Шаг 3 — Финальная эмульсификация погружным блендером</div>
+    <h3>Шаг, недоступный домашней кухне</h3>
+    <p>Вместо того чтобы снимать жир с поверхности, повара вбивают его прямо в бульон погружным блендером — дробя капли жира в тонкую эмульсию, которая становится единым целым с супом. Результат — сияющая, бархатистая белая жидкость, недостижимая в домашних условиях.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.4.png" alt="Шаг 4">
+    <div class="step-label">Шаг 4 — Соевое молоко и финальная фильтрация</div>
+    <h3>Шелковистая гладкость до последней капли</h3>
+    <p>Добавляется соевое молоко, бульон доводится до кратковременного кипения — это смягчает насыщенность и округляет вкус, не скрывая глубины костного бульона. Затем бульон тщательно процеживается через мелкое сито до шелковистой однородной консистенции.</p>
+  </div>
+
+  <a class="back" href="index.html">← Назад к меню</a>
+</div>
+
+<!-- ARMENIAN -->
+<div data-lang="hy">
+  <h1>Ինչպես ենք պատրաստում մեր Փայթան բուլյոնը</h1>
+
+  <div class="step">
+    <img src="paitan.1.png" alt="Քայլ 1">
+    <div class="step-label">Քայլ 1 — Ոսկորների խորքից ծնված համի շերտեր</div>
+    <h3>Հավի կմախք · Ոտքեր · Ազդրամիս · Ամբողջ հավ</h3>
+    <p>Թափանցիկ բուլյոն ստանալուց հետո հավի ոսկորները երբեք չեն դեն նետվում։ Ավելացվում է թարմ ջուր, հավի ոտքեր, ազդրամիս, իսկ անհրաժեշտության դեպքում՝ ամբողջ հավ — ոսկրածուծից և կոլագենից քամելով ամեն կաթիլ ումամի։</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.2.png" alt="Քայլ 2">
+    <div class="step-label">Քայլ 2 — Էմուլսիֆիկացիայի արվեստ</div>
+    <h3>Ճարպ և ջուր — միավորված վարպետությամբ</h3>
+    <p>Փայթանի կաթնագույն սպիտակ երանգը դիտավորյալ էմուլսիֆիկացիայի արդյունք է՝ ճարպ և ջուր, որոնք միավորվում են ուժեղ ջերմության ազդեցությամբ։ Անհրաժեշտության դեպքում ավելացվում է հավի յուղ։ Երբ բուլյոնը խտանում է, հեշտ է այրվում, ուստի խոհարարները մշտապես կողքին են՝ հաճախ խառնելով և ուշադիր հսկելով կրակը։</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.3.png" alt="Քայլ 3">
+    <div class="step-label">Քայլ 3 — Վերջնական էմուլսիֆիկացիա ձեռքի բլենդերով</div>
+    <h3>Քայլ, որն անհասանելի է տնային խոհանոցին</h3>
+    <p>Մակերեսից ճարպը հավաքելու փոխարեն խոհարարները ձեռքի բլենդերով այն ուղղակիորեն խառնում են բուլյոնի մեջ՝ ճարպի կաթիլները վերածելով նուրբ էմուլսիայի, որը միաձուլվում է ապուրին։ Արդյունքը փայլուն, թավշյա սպիտակ հեղուկ է, որն անկրկնելի է տնային պայմաններում։</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.4.png" alt="Քայլ 4">
+    <div class="step-label">Քայլ 4 — Սոյայի կաթ և վերջնական քամում</div>
+    <h3>Մետաքսյա հարթություն մինչև վերջին կաթիլ</h3>
+    <p>Ավելացվում է սոյայի կաթ, բուլյոնը կարճ ժամանակով եռացվում է՝ մեղմելով հարստությունը և կլորացնելով համը՝ չծածկելով ոսկրային բուլյոնի խորությունը։ Այնուհետև բուլյոնը մանրակրկիտ քամվում է մանր մաղով՝ մետաքսյա հարթ կconsistency հասնելու համար։</p>
+  </div>
+
+  <a class="back" href="index.html">← Վերադառնալ մենյու</a>
+</div>
+
+<!-- JAPANESE -->
+<div data-lang="ja">
+  <h1>白湯スープができるまで</h1>
+
+  <div class="step">
+    <img src="paitan.1.png" alt="ステップ1">
+    <div class="step-label">ステップ 1 — 骨の旨みを重ねる</div>
+    <h3>鶏ガラ・もみじ・もも肉・丸鶏</h3>
+    <p>清湯スープで丁寧に取り切った鶏ガラに、新たな水を加えて再び火にかける。もみじ（鶏足）や鶏もも肉、時には丸鶏をさらに加えることで、骨髄や軟骨に残る深い旨みを余すことなく引き出す。一番出汁の上品さとは異なる、力強く重厚なコクがここから生まれる。</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.2.png" alt="ステップ2">
+    <div class="step-label">ステップ 2 — 乳化という技術</div>
+    <h3>脂と水を、職人の技で融合させる</h3>
+    <p>白湯の白濁は、脂と水が均一に混ざり合った「乳化」の結果だ。必要に応じて鶏油を加えながら強火で煮込み続ける。乳化が進んで濃度が増すと鍋底が焦げやすくなるため、職人は常に鍋のそばで頻繁にかき混ぜながら火を管理する。</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.3.png" alt="ステップ3">
+    <div class="step-label">ステップ 3 — ハンドブレンダーで仕上げる乳化</div>
+    <h3>家庭では再現できない、プロの白湯</h3>
+    <p>表面に浮かび上がった鶏油をあえて取り除かず、スープとともにハンドブレンダーで一気に攪拌する。脂とスープが細かく砕かれ、互いに溶け込むことで、白く輝くなめらかな乳化スープへと変貌する。このひと工程が、プロの白湯を決定づける。</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="paitan.4.png" alt="ステップ4">
+    <div class="step-label">ステップ 4 — 豆乳で整え、丁寧に漉す</div>
+    <h3>絹のようななめらかさへ</h3>
+    <p>最後に豆乳を加え、ひと煮立ちさせる。豆乳はスープに穏やかなコクとまろやかさを加えながら、過度な動物的重さを整える隠し味だ。仕上げに目の細かい漉し器で丁寧に漉すことで、舌触りに一切の雑味を残さない、絹のような白湯スープが完成する。</p>
+  </div>
+
+  <a class="back" href="index.html">← メニューに戻る</a>
+</div>
+```
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
