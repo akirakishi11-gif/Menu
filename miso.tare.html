@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Miso Tare</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", serif;
+  background: #f5f1ea;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 760px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* 言語切替（右上） */
+.lang {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.lang span {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.lang span.active {
+  opacity: 1;
+  border-bottom: 1px solid #c5a46d;
+}
+
+/* 画像 */
+img {
+  width: 100%;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+/* タイトル */
+h1 {
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* ステップ */
+.step {
+  margin-bottom: 60px;
+}
+
+.step-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #8c7a5b;
+  margin-bottom: 8px;
+}
+
+.step h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  line-height: 1.8;
+  font-size: 15px;
+  color: #444;
+}
+
+/* 言語制御 */
+[data-lang] {
+  display: none;
+}
+</style>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = (el.dataset.lang === lang) ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.lang span').forEach(el => {
+    el.classList.remove('active');
+  });
+
+  document.getElementById(lang).classList.add('active');
+}
+</script>
+</head>
+
+<body onload="switchLang('en')">
+
+<div class="container">
+
+<!-- 言語 -->
+<div class="lang">
+  <span id="en" onclick="switchLang('en')">EN</span>
+  <span id="ru" onclick="switchLang('ru')">RU</span>
+  <span id="hy" onclick="switchLang('hy')">HY</span>
+  <span id="ja" onclick="switchLang('ja')">JA</span>
+</div>
+
+<h1>Miso Tare — Process</h1>
+
+<!-- STEP 1 -->
+<div class="step">
+  <img src="miso.tare.1.png">
+
+  <div data-lang="en">
+    <div class="step-title">STEP 1</div>
+    <h2>Two Types of Miso</h2>
+    <p>The deep richness of red miso and the gentle sweetness of white miso create a layered, complex flavor.</p>
+  </div>
+
+  <div data-lang="ru">
+    <div class="step-title">ШАГ 1</div>
+    <h2>Два вида мисо</h2>
+    <p>Красное и белое мисо создают глубокий и сбалансированный вкус.</p>
+  </div>
+
+  <div data-lang="hy">
+    <div class="step-title">ՔԱՅԼ 1</div>
+    <h2>Երկու տեսակի միսո</h2>
+    <p>Կարմիր և սպիտակ միսոն ստեղծում են հարուստ և հավասարակշռված համ։</p>
+  </div>
+
+  <div data-lang="ja">
+    <div class="step-title">STEP 1</div>
+    <h2>二種の味噌</h2>
+    <p>赤味噌のコクと白味噌の甘みが、立体的な味わいを生む。</p>
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+  <img src="miso.tare.2.png">
+
+  <div data-lang="en">
+    <div class="step-title">STEP 2</div>
+    <h2>Aromatics</h2>
+    <p>Garlic, ginger, and onion are slowly cooked to unlock deep flavors.</p>
+  </div>
+
+  <div data-lang="ru">
+    <div class="step-title">ШАГ 2</div>
+    <h2>Ароматика</h2>
+    <p>Чеснок, имбирь и лук раскрывают вкус при медленном приготовлении.</p>
+  </div>
+
+  <div data-lang="hy">
+    <div class="step-title">ՔԱՅԼ 2</div>
+    <h2>Բուրավետություն</h2>
+    <p>Սխտորը, կոճապղպեղը և սոխը բացում են իրենց համը։</p>
+  </div>
+
+  <div data-lang="ja">
+    <div class="step-title">STEP 2</div>
+    <h2>香味野菜</h2>
+    <p>じっくり火入れし、旨味を最大限に引き出す。</p>
+  </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+  <img src="miso.tare.3.png">
+
+  <div data-lang="en">
+    <div class="step-title">STEP 3</div>
+    <h2>Seasoning</h2>
+    <p>Selected sauces and spices are layered to achieve balance.</p>
+  </div>
+
+  <div data-lang="ru">
+    <div class="step-title">ШАГ 3</div>
+    <h2>Приправы</h2>
+    <p>Добавляются соусы и специи для баланса.</p>
+  </div>
+
+  <div data-lang="hy">
+    <div class="step-title">ՔԱՅԼ 3</div>
+    <h2>Համեմունքներ</h2>
+    <p>Ավելացվում են սոուսներ և համեմունքներ։</p>
+  </div>
+
+  <div data-lang="ja">
+    <div class="step-title">STEP 3</div>
+    <h2>調味料</h2>
+    <p>バランスを整えるために重ねていく。</p>
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="step">
+  <img src="miso.tare.4.png">
+
+  <div data-lang="en">
+    <div class="step-title">STEP 4</div>
+    <h2>Rest</h2>
+    <p>Time allows the flavors to unify into one.</p>
+  </div>
+
+  <div data-lang="ru">
+    <div class="step-title">ШАГ 4</div>
+    <h2>Отдых</h2>
+    <p>Время объединяет вкус.</p>
+  </div>
+
+  <div data-lang="hy">
+    <div class="step-title">ՔԱՅԼ 4</div>
+    <h2>Հանգիստ</h2>
+    <p>Ժամանակը միավորում է համերը։</p>
+  </div>
+
+  <div data-lang="ja">
+    <div class="step-title">STEP 4</div>
+    <h2>休ませる</h2>
+    <p>時間が味をひとつにする。</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
