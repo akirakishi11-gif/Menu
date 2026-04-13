@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How We Make Our Chili Oil</title>
+  <style>
+    :root {
+      --ink: #1a1008;
+      --gold: #a09070;
+      --muted: #7a6a5a;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #fdf6ee;
+      color: var(--ink);
+    }
+    .lang-bar {
+      background: var(--ink);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5rem 1.2rem;
+      gap: 0.3rem;
+      border-bottom: 1px solid #2e2418;
+    }
+    .lang-bar span {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      margin-right: 0.5rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid #3a2f22;
+      color: #a09070;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+    .content {
+      padding: 24px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 24px;
+      line-height: 1.3;
+    }
+    .step {
+      margin-bottom: 32px;
+    }
+    .step img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 50%;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .step-label {
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+    }
+    .step h3 {
+      font-size: 17px;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+    .step p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0;
+      color: #3a2a1a;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #d4c4a0;
+      margin: 0 0 32px;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 16px;
+      color: #8B6914;
+      text-decoration: none;
+    }
+    [data-lang] { display: none; }
+    [data-lang="en"] { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-bar">
+    <span>LANG /</span>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('hy')">HY</button>
+    <button class="lang-btn" onclick="setLang('ja')">JA</button>
+  </div>
+
+  <div class="content">
+
+```
+<!-- ENGLISH -->
+<div data-lang="en">
+  <h1>How We Make Our Chili Oil</h1>
+
+  <div class="step">
+    <img src="chili.oil.1.png" alt="Step 1">
+    <div class="step-label">Step 1 — Awakening Aroma in Oil</div>
+    <h3>Low Heat, Long Time</h3>
+    <p>Togarashi, Sichuan pepper, and star anise are slowly heated in oil at 160°C for 30 to 40 minutes. Not fried, not rushed. The goal is to coax each aroma gently into the oil. This is where the depth of the chili oil is built.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.2.png" alt="Step 2">
+    <div class="step-label">Step 2 — Blending Three Types of Chili</div>
+    <h3>The Blend is What Makes It Ours</h3>
+    <p>Three types of chili — each distinct in heat, color, and fragrance — are blended together with a touch of sake. No single chili could achieve this complexity alone. The blend is what makes it ours.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.3.png" alt="Step 3">
+    <div class="step-label">Step 3 — A Flash of Heat, Then Clarity</div>
+    <h3>Timing Defines the Result</h3>
+    <p>The oil is brought up to 180°C and poured gradually over the chili blend, stirring as it goes. It is strained immediately while still hot — capturing the essence, leaving behind anything that would cloud the finish. The timing of this moment defines the final result.</p>
+  </div>
+
+  <a class="back" href="index.html">← Back to Menu</a>
+</div>
+
+<!-- RUSSIAN -->
+<div data-lang="ru">
+  <h1>Как мы готовим наше масло чили</h1>
+
+  <div class="step">
+    <img src="chili.oil.1.png" alt="Шаг 1">
+    <div class="step-label">Шаг 1 — Пробуждение аромата в масле</div>
+    <h3>Низкая температура, долгое время</h3>
+    <p>Тогараши, сычуаньский перец и бадьян медленно прогреваются в масле при 160°C в течение 30–40 минут. Без жарки, без спешки. Цель — мягко раскрыть каждый аромат в масле. Именно здесь закладывается глубина чили-масла.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.2.png" alt="Шаг 2">
+    <div class="step-label">Шаг 2 — Смешивание трёх видов чили</div>
+    <h3>Именно в смешивании — наша особенность</h3>
+    <p>Три вида чили — каждый со своей остротой, цветом и ароматом — смешиваются с небольшим количеством сакэ. Ни один вид чили в отдельности не способен достичь такой сложности. Именно этот купаж делает его нашим.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.3.png" alt="Шаг 3">
+    <div class="step-label">Шаг 3 — Мгновение жара, затем чистота</div>
+    <h3>Момент определяет результат</h3>
+    <p>Масло разогревается до 180°C и постепенно вливается в смесь чили при постоянном помешивании. Сразу же, пока ещё горячее, процеживается — сохраняя суть и отсеивая всё лишнее. Точность этого момента определяет конечный результат.</p>
+  </div>
+
+  <a class="back" href="index.html">← Назад к меню</a>
+</div>
+
+<!-- ARMENIAN -->
+<div data-lang="hy">
+  <h1>Ինչպես ենք պատրաստում մեր չիլի յուղը</h1>
+
+  <div class="step">
+    <img src="chili.oil.1.png" alt="Քայլ 1">
+    <div class="step-label">Քայլ 1 — Բույրի արթնացում յուղում</div>
+    <h3>Ցածր ջերմություն, երկար ժամանակ</h3>
+    <p>Տոգարաշի, սիչուանի պղպեղ և բադյան դանդաղ տաքացվում են յուղում 160°C-ում 30–40 րոպե։ Առանց տապակելու, առանց շտապելու։ Նպատակն է մեղմորեն բացել յուրաքանչյուր բույր յուղի մեջ։ Այստեղ է դրվում չիլի յուղի խորությունը։</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.2.png" alt="Քայլ 2">
+    <div class="step-label">Քայլ 2 — Երեք տեսակ չիլիի խառնում</div>
+    <h3>Հենց խառնուրդն է մեր առանձնահատկությունը</h3>
+    <p>Երեք տեսակ չիլի — յուրաքանչյուրն ունի իր կծությունը, գույնը և բույրը — խառնվում են մի կաթիլ սաքեի հետ։ Ոչ մի չիլի առանձին չի կարող հասնել այս բարդությանը։ Հենց այս խառնուրդն է այն դարձնում մերը։</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.3.png" alt="Քայլ 3">
+    <div class="step-label">Քայլ 3 — Ջերմության մի պահ, ապա պարզություն</div>
+    <h3>Պահը որոշում է արդյունքը</h3>
+    <p>Յուղը տաքացվում է մինչև 180°C և աստիճանաբար լցվում չիլիի խառնուրդի վրա՝ անընդհատ խառնելով։ Անմիջապես, դեռ տաք ժամանակ, քամվում է — պահպանելով էությունը և հեռացնելով ամեն ինչ, ինչը կխամրեցներ վերջնական արդյունքը։</p>
+  </div>
+
+  <a class="back" href="index.html">← Վերադառնալ մենյու</a>
+</div>
+
+<!-- JAPANESE -->
+<div data-lang="ja">
+  <h1>三種唐辛子の辣油</h1>
+
+  <div class="step">
+    <img src="chili.oil.1.png" alt="ステップ1">
+    <div class="step-label">ステップ 1 — 香りを、油で引き出す</div>
+    <h3>低温で、じっくりと</h3>
+    <p>鷹の爪、花椒、八角。個性の異なる3つのスパイスを160°Cの油で30〜40分かけてじっくりと加熱する。焦がさず、急がず、香りが静かに油へと溶け込んでいくのを待つ。この時間が、辣油の奥行きを決める。</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.2.png" alt="ステップ2">
+    <div class="step-label">ステップ 2 — 三種の唐辛子をブレンドする</div>
+    <h3>このブレンドが、うちの辣油をうちの辣油にする</h3>
+    <p>辛味、色、香りとそれぞれ異なる個性を持つ3種類の唐辛子をブレンドし、少量の酒を加えて混ぜ合わせる。一種類では出せない複雑さが、このブレンドから生まれる。</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chili.oil.3.png" alt="ステップ3">
+    <div class="step-label">ステップ 3 — 高温で注ぎ、すぐに漉す</div>
+    <h3>この一瞬が、仕上がりを左右する</h3>
+    <p>熱したオイルを180°Cまで上げ、唐辛子のブレンドに少しずつ注ぎながら素早く混ぜ合わせる。熱いうちにすぐ漉すことで、雑味のない透き通った辣油が完成する。この一瞬の判断が、仕上がりを左右する。</p>
+  </div>
+
+  <a class="back" href="index.html">← メニューに戻る</a>
+</div>
+```
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
