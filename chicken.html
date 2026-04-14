@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How We Make Our Chicken Chashu</title>
+  <style>
+    :root {
+      --ink: #1a1008;
+      --gold: #a09070;
+      --muted: #7a6a5a;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #fdf6ee;
+      color: var(--ink);
+    }
+    .lang-bar {
+      background: var(--ink);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5rem 1.2rem;
+      gap: 0.3rem;
+      border-bottom: 1px solid #2e2418;
+    }
+    .lang-bar span {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      margin-right: 0.5rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid #3a2f22;
+      color: #a09070;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+    .content {
+      padding: 24px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 24px;
+      line-height: 1.3;
+    }
+    .step {
+      margin-bottom: 32px;
+    }
+    .step img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 50%;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .step-label {
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+    }
+    .step h3 {
+      font-size: 17px;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+    .step p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0;
+      color: #3a2a1a;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #d4c4a0;
+      margin: 0 0 32px;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 16px;
+      color: #8B6914;
+      text-decoration: none;
+    }
+    [data-lang] { display: none; }
+    [data-lang="en"] { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-bar">
+    <span>LANG /</span>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('hy')">HY</button>
+    <button class="lang-btn" onclick="setLang('ja')">JA</button>
+  </div>
+
+  <div class="content">
+
+```
+<!-- ENGLISH -->
+<div data-lang="en">
+  <h1>How We Make Our Chicken Chashu</h1>
+
+  <div class="step">
+    <img src="chicken.1.png" alt="Step 1">
+    <div class="step-label">Step 1 — Brined for 24 Hours</div>
+    <h3>Seasoned from the Inside Out</h3>
+    <p>Fresh chicken breast is brined in salt and sugar for 24 hours. This helps the seasoning soak deep into the meat, keeping it moist and tender.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.2.png" alt="Step 2">
+    <div class="step-label">Step 2 — Sealed & Slow-Cooked at 63°C</div>
+    <h3>Low Heat, No Shortcuts</h3>
+    <p>Chicken breast is seasoned with white pepper, garlic, and clove, then vacuum-sealed with olive oil. It is cooked at 63°C for 50–60 minutes. Low heat, no shortcuts — this keeps it juicy.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.3.png" alt="Step 3">
+    <div class="step-label">Step 3 — Chilled, Then Sliced to Order</div>
+    <h3>Fresh Until the Last Moment</h3>
+    <p>Right after cooking, the chicken breast is placed in ice water to lock in the juices. It is kept fresh until needed, then sliced to order for each bowl.</p>
+  </div>
+
+  <a class="back" href="index.html">← Back to Menu</a>
+</div>
+
+<!-- RUSSIAN -->
+<div data-lang="ru">
+  <h1>Как мы готовим наш Куриный Тясю</h1>
+
+  <div class="step">
+    <img src="chicken.1.png" alt="Шаг 1">
+    <div class="step-label">Шаг 1 — Маринование в рассоле 24 часа</div>
+    <h3>Приправлено изнутри</h3>
+    <p>Свежее куриное филе маринуется в рассоле из соли и сахара в течение 24 часов. Это помогает приправам проникнуть глубоко в мясо, сохраняя его сочным и нежным.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.2.png" alt="Шаг 2">
+    <div class="step-label">Шаг 2 — Вакуумная упаковка и приготовление при 63°C</div>
+    <h3>Низкая температура, без компромиссов</h3>
+    <p>Куриное филе приправляется белым перцем, чесноком и гвоздикой, затем запаивается в вакуумный пакет с оливковым маслом. Готовится при температуре 63°C в течение 50–60 минут. Низкая температура, никаких сокращений — это сохраняет сочность.</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.3.png" alt="Шаг 3">
+    <div class="step-label">Шаг 3 — Охлаждение и нарезка под заказ</div>
+    <h3>Свежее до последнего момента</h3>
+    <p>Сразу после приготовления куриное филе помещают в ледяную воду, чтобы сохранить все соки. Хранится в свежем виде до подачи, затем нарезается под заказ для каждой миски.</p>
+  </div>
+
+  <a class="back" href="index.html">← Назад к меню</a>
+</div>
+
+<!-- ARMENIAN -->
+<div data-lang="hy">
+  <h1>Ինչպես ենք պատրաստում մեր Հավի Չաշուն</h1>
+
+  <div class="step">
+    <img src="chicken.1.png" alt="Քայլ 1">
+    <div class="step-label">Քայլ 1 — Աղաջրում 24 ժամ</div>
+    <h3>Համեմված ներսից</h3>
+    <p>Թարմ հավի կրծքամիսը աղաջրվում է աղի և շաքարի մեջ 24 ժամ։ Սա օգնում է համեմունքներին թափանցել մսի խորքը՝ պահելով այն հյութեղ և նուրբ։</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.2.png" alt="Քայլ 2">
+    <div class="step-label">Քայլ 2 — Վակուումային փաթեթավորում և եփում 63°C-ում</div>
+    <h3>Ցածր ջերմություն, առանց փոխզիջումների</h3>
+    <p>Հավի կրծքամիսը համեմվում է սպիտակ պղպեղով, սխտորով և մեխակով, ապա կնքվում է վակուումային տոպրակում՝ ձիթապտղի յուղով։ Եփվում է 63°C-ում 50–60 րոպե։ Ցածր ջերմություն, առանց դյուրանցումների — սա պահում է հյութեղությունը։</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.3.png" alt="Քայլ 3">
+    <div class="step-label">Քայլ 3 — Սառեցում և կտրատում պատվերի համաձայն</div>
+    <h3>Թարմ մինչև վերջին պահը</h3>
+    <p>Եփելուց անմիջապես հետո հավի կրծքամիսը դրվում է սառցե ջրի մեջ՝ հյութերը փակելու համար։ Պահվում է թարմ մինչև անհրաժեշտ պահը, ապա կտրատվում է պատվերի համաձայն յուրաքանչյուր բաժակի համար։</p>
+  </div>
+
+  <a class="back" href="index.html">← Վերադառնալ մենյու</a>
+</div>
+
+<!-- JAPANESE -->
+<div data-lang="ja">
+  <h1>チキンチャーシューができるまで</h1>
+
+  <div class="step">
+    <img src="chicken.1.png" alt="ステップ1">
+    <div class="step-label">ステップ 1 — ソミュール液で下味をつける</div>
+    <h3>肉の奥まで、味を浸透させる</h3>
+    <p>新鮮な丸鶏から取り出した鶏胸肉を、塩と砂糖をしっかりと溶かしたソミュール液に24時間漬け込む。この工程が肉の奥まで味を浸透させ、しっとりとした食感の土台を作る。</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.2.png" alt="ステップ2">
+    <div class="step-label">ステップ 2 — 真空パックで密閉し、低温調理</div>
+    <h3>低温でじっくり、それがすべて</h3>
+    <p>水気を丁寧に拭き取り、白胡椒、ニンニク、クローブで味と香りを整える。保水効果を上げるためにオリーブオイルとともに真空パックで密閉し、63°Cで50〜60分間低温調理する。高温ではなく、低温でじっくりと火入れすることでパサつかない鶏胸肉を作ることができる。</p>
+  </div>
+  <hr class="divider">
+
+  <div class="step">
+    <img src="chicken.3.png" alt="ステップ3">
+    <div class="step-label">ステップ 3 — 急冷して、注文ごとにカット</div>
+    <h3>提供の瞬間まで、品質を守る</h3>
+    <p>加熱後はすぐに氷水で急冷し、肉汁を閉じ込める。提供の瞬間まで品質を保ち、注文ごとにカットして添える。</p>
+  </div>
+
+  <a class="back" href="index.html">← メニューに戻る</a>
+</div>
+```
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
